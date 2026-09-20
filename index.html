@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Прости меня ❤️</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#f8e9e9;color:#4a3030;overflow-x:hidden}
+.intro{position:fixed;inset:0;z-index:100;display:flex;justify-content:center;align-items:center;text-align:center;background:radial-gradient(circle at 20% 20%,#fff5f5,transparent 35%),radial-gradient(circle at 80% 80%,#f3d4d8,transparent 40%),#f8e9e9;transition:opacity 1s ease,visibility 1s ease}
+.intro.hide{opacity:0;visibility:hidden}
+.intro-content{padding:30px;animation:appear 1.2s ease}
+.heart{font-size:75px;animation:heartbeat 1.5s infinite;margin-bottom:20px}
+.intro h1{font-size:clamp(38px,8vw,70px);font-family:Georgia,serif;font-weight:normal;margin-bottom:15px}
+.intro p{font-size:18px;opacity:.75;margin-bottom:35px}
+.open-btn{border:none;background:#b97882;color:white;padding:16px 45px;border-radius:50px;font-size:18px;cursor:pointer;box-shadow:0 10px 30px rgba(120,70,80,.25);transition:.3s}
+.open-btn:hover{transform:scale(1.06);background:#a96772}
+.site{min-height:100vh;padding:60px 20px;background:radial-gradient(circle at 10% 10%,#fff8f5,transparent 30%),radial-gradient(circle at 90% 90%,#efd4d7,transparent 35%),#f8e9e9}
+.container{max-width:1000px;margin:auto}
+.title{text-align:center;font-family:Georgia,serif;font-size:clamp(45px,8vw,75px);font-weight:normal;margin-bottom:15px}
+.subtitle{text-align:center;font-size:18px;opacity:.65;margin-bottom:50px}
+.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin-bottom:55px}
+.photo{background:white;padding:10px 10px 25px;box-shadow:0 15px 35px rgba(70,40,40,.15);transition:.4s}
+.photo:nth-child(1){transform:rotate(-2deg)} .photo:nth-child(2){transform:rotate(2deg)} .photo:nth-child(3){transform:rotate(-1deg)}
+.photo:hover{transform:rotate(0deg) translateY(-8px) scale(1.02)}
+.photo img{width:100%;height:380px;object-fit:cover;display:block}
+.letter{background:rgba(255,250,248,.8);padding:45px;border-radius:25px;box-shadow:0 15px 40px rgba(70,40,40,.1);line-height:1.8;font-size:18px;margin-bottom:55px}
+.letter p{margin-bottom:18px}
+.final{text-align:center;padding:50px 20px 80px}
+.final-heart{font-size:55px;animation:heartbeat 1.5s infinite;margin-bottom:15px}
+.final h2{font-family:Georgia,serif;font-size:clamp(32px,6vw,55px);font-weight:normal;line-height:1.3}
+.small{margin-top:20px;opacity:.6}
+@keyframes heartbeat{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+@keyframes appear{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:700px){.site{padding:40px 15px}.photos{grid-template-columns:1fr;gap:30px}.photo img{height:auto;max-height:500px}.letter{padding:25px;font-size:16px;line-height:1.7}}
+</style>
+</head>
+<body>
+<section class="intro" id="intro">
+<div class="intro-content">
+<div class="heart">❤️</div>
+<h1>Для тебя...</h1>
+<p>Я хочу тебе кое-что сказать</p>
+<button class="open-btn" onclick="openSite()">Открыть ❤️</button>
+</div>
+</section>
+
+<main class="site">
+<div class="container">
+<h1 class="title">Прости меня</h1>
+<p class="subtitle">Я хочу сказать тебе это от всего сердца ❤️</p>
+
+<div class="photos">
+<div class="photo"><img src="photo1.jpg" alt="Мы"></div>
+<div class="photo"><img src="photo2.jpg" alt="Мы вместе"></div>
+<div class="photo"><img src="photo3.jpg" alt="Наш момент"></div>
+</div>
+
+<div class="letter">
+<p>Любимая, прости меня.</p>
+<p>Прости, что порчу настроение, заставляю переживать, треплю нервы. Прости, что задаю тупые вопросы по типу: «Бишу ли я тебя?» и тому подобное.</p>
+<p>Я очень сильно виноват, что не сказал, что написал Даше. Я не думал, что это приведёт к тому, что было.</p>
+<p>Прости, что орал сегодня и отвечал грубо. Получается, уже позавчера — прости, что реакции тупо ставил без ответов. Мне неудобно было, завал сильный был, и я не хотел мешать тебе время проводить из-за ссоры утром.</p>
+<p>И прости, что я там ляпнул перед отъездом к бабушке.</p>
+<p>Я понимаю, что сделал тебе неприятно и заставил переживать. Мне правда очень жаль.</p>
+</div>
+
+<div class="final">
+<div class="final-heart">❤️</div>
+<h2>Любимая, я тебя<br>очень сильно люблю,<br>прости.</h2>
+<p class="small">❤️</p>
+</div>
+</div>
+</main>
+
+<script>
+function openSite(){
+ document.getElementById("intro").classList.add("hide");
+ setTimeout(()=>window.scrollTo({top:0,behavior:"smooth"}),300);
+}
+</script>
+</body>
+</html>
